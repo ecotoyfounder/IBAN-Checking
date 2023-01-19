@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBAN Checking</title>
+  </head>
+  <body>
+    <div style="text-align: center; justify-content: center">
+      <h1 style="color: #60cd18">IBAN Validator</h1>
+      <textarea
+        id="IBAN"
+        style="width: 300px; height: 250px; margin: auto; border-color: #60cd18"
+      ></textarea>
+      <button
+        id="check"
+        style="
+          display: block;
+          margin: auto;
+          margin-top: 10px;
+          min-width: 300px;
+          max-width: 400px;
+          height: 45px;
+          padding: 7px;
+          border-radius: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          border-color: #60cd18;
+          background-color: #e7ffd7;
+        "
+      >
+        Check
+      </button>
+      <button
+        id="refresh"
+        style="
+          width: 75px;
+          height: 35px;
+          margin: 10px;
+          background-color: #60cd18;
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+        "
+      >
+        Refresh
+      </button>
+    </div>
+    <script type="module" src="countryCodes.js"></script>
+    <script type="module" src="validator.js"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
