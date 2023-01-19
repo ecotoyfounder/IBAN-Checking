@@ -77,21 +77,6 @@ function handleCheck() {
 
 refreshButton.addEventListener('click', handleClick)
 
-function c() {
-  ibanArray.forEach((iban) => {
-    if (!isIbanValidate(iban)) {
-      ibanError.push(iban)
-    }
-  })
-  if (ibanError.length > 0) {
-    btn.textContent = ibanError.join('\n')
-    isNotCorrect()
-  }
-  if (ibanError.length === 0 && ibanData) {
-    isCorrect()
-  }
-}
-
 function handleClick() {
   btn.style.background = '#e7ffd7'
   btn.textContent = 'Check'
