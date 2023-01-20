@@ -4,11 +4,11 @@ This small app helps to check IBAN using some rules of IBAN standard (you can in
 
 **A bit about the rules**
 
-• 2 symbols at the start of IBAN must contain the Country code \n
-• The third and fourth symbols must be a number
-• IBAN must contain just capital English letters and numbers
-• IBAN length can't be longer than 34 symbols
-• The shortest value I found was 16 symbols for Belgium
+• 2 symbols at the start of IBAN must contain the Country code 
+• The third and fourth symbols must be a number 
+• IBAN must contain just capital English letters and numbers 
+• IBAN length can't be longer than 34 symbols 
+• The shortest value I found was 16 symbols for Belgium 
 
 **You can check not only a single IBAN but a list too. The list must contain a divider — ',' (comma) or '\n' (transfer to the new line).**
 
