@@ -4,7 +4,7 @@ This small app helps to check IBAN using some rules of IBAN standard (you can in
 
 **A bit about the rules**
 
-• 2 symbols at the start of IBAN must contain the Country code
+• 2 symbols at the start of IBAN must contain the Country code \n
 • The third and fourth symbols must be a number
 • IBAN must contain just capital English letters and numbers
 • IBAN length can't be longer than 34 symbols
