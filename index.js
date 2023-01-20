@@ -34,21 +34,30 @@ function handleCheck() {
       if (ibanError.length === 0 && ibanData) {
         isCorrect()
       }
-    } else if (newLineRegExp.test(ibanData) && ibanData.length > 34) {
+    } else if (newLineRegExp.test(ibanData)) {
       // we can't use ibanData.includes('\n') because "includes" can't contain a regular expression
       const ibanArray = ibanData.split('\n')
 
-      ibanArray.forEach((iban) => {
-        if (!isIbanValidate(iban)) {
-          ibanError.push(iban)
+      if (ibanArray.length > 1) {
+        ibanArray.forEach((iban) => {
+          if (!isIbanValidate(iban)) {
+            ibanError.push(iban)
+          }
+        })
+        if (ibanError.length > 0) {
+          btn.textContent = ibanError.join('\n')
+          isNotCorrect()
         }
-      })
-      if (ibanError.length > 0) {
-        btn.textContent = ibanError.join('\n')
-        isNotCorrect()
-      }
-      if (ibanError.length === 0 && ibanData) {
-        isCorrect()
+        if (ibanError.length === 0 && ibanData) {
+          isCorrect()
+        }
+      } else {
+        if (isIbanValidate(ibanData)) {
+          isCorrect()
+        } else {
+          btn.textContent = ibanData
+          isNotCorrect()
+        }
       }
     } else if (!newLineRegExp.test(ibanData) && ibanData.length > 34) {
       const columnIbanArray = ibanData.split('\n')
@@ -76,21 +85,6 @@ function handleCheck() {
 }
 
 refreshButton.addEventListener('click', handleClick)
-
-function c() {
-  ibanArray.forEach((iban) => {
-    if (!isIbanValidate(iban)) {
-      ibanError.push(iban)
-    }
-  })
-  if (ibanError.length > 0) {
-    btn.textContent = ibanError.join('\n')
-    isNotCorrect()
-  }
-  if (ibanError.length === 0 && ibanData) {
-    isCorrect()
-  }
-}
 
 function handleClick() {
   btn.style.background = '#e7ffd7'
